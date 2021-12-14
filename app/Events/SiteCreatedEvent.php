@@ -12,21 +12,23 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Validation\Concerns\ValidatesAttributes;
 
-class PasswordCreated
+class SiteCreatedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
 
+    public $email;
 
-    public $password;
+    public $message;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Vault $vault)
+    public function __construct($email,$message)
     {
-        $this->vault = $vault;
+        $this->email = $email;
+        $this->message = $message;
     }
 
     /**

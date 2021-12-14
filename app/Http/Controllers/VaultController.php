@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\PasswordCreated;
+use App\Events\SiteCreatedEvent;
 use Illuminate\Http\Request;
 use App\Models\Vault;
 use App\Models\User;
@@ -20,6 +20,10 @@ class VaultController extends Controller
 
     public function index()
     {
+//        $email = 'a@a.com';
+//        $createdMessage = 'SOME MESSAGE <a href="http://omnivault.test/vaults">button</a>';
+//        event(new SiteCreatedEvent($email,$createdMessage));
+//dd(111);
         return view('vaults.index2');
     }
     public function showSites(Request $request)
@@ -90,8 +94,9 @@ class VaultController extends Controller
                 $vault->user_id = $currentUser->id;
                 $vault->save();
 
-                event(new PasswordCreated($vault));
             }
+            $createdMessage ="Site has been Successfully Added <a href=\"http://omnivault.test/vaults\">See My Sites</a>";
+            event(new SiteCreatedEvent($currentUser->email,$createdMessage));
         }
 
         return redirect()->route('vaults.index')
@@ -164,11 +169,13 @@ class VaultController extends Controller
                 ['password' => Crypt::encryptString($request->password)]
             ));
         }
+        $currentUser=Auth::user();
+        $createdMessage ="Site has been Successfully Updated Site url:$request->url<a href=\"http://omnivault.test/vaults\">See My Sites</a>";
+        event(new SiteCreatedEvent($currentUser->email,$createdMessage));
+
         return redirect()->route('vaults.index')
             ->with('success','site updated successfully');
     }
-
-
 
     public function destroy($id)
     {
