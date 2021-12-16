@@ -20,10 +20,6 @@ class VaultController extends Controller
 
     public function index()
     {
-//        $email = 'a@a.com';
-//        $createdMessage = 'SOME MESSAGE <a href="http://omnivault.test/vaults">button</a>';
-//        event(new SiteCreatedEvent($email,$createdMessage));
-//dd(111);
         return view('vaults.index2');
     }
     public function showSites(Request $request)
@@ -42,7 +38,7 @@ class VaultController extends Controller
                 ->addColumn('action',
                     '<a class="edit btn btn-warning btn-sm showPassword" href="{{route("vaults.showpassword", $id)}}"> Show Password</a>
                     <a class="edit btn btn-success btn-sm editVault" href="{{route("vaults.edit", $id)}}"> Edit</a>
-                    <a class="delete btn btn-danger btn-sm" href="{{route("vaults.destroy", $id)}}"> Remove</a>
+                    <a class="delete btn btn-danger btn-sm removeVault" href="{{route("vaults.destroy", $id)}}"> Remove</a>
                 ')
                 ->editColumn('password','***********')
                 ->rawColumns(['action'])
@@ -98,9 +94,9 @@ class VaultController extends Controller
             $createdMessage ="Site has been Successfully Added <a href=\"http://omnivault.test/vaults\">See My Sites</a>";
             event(new SiteCreatedEvent($currentUser->email,$createdMessage));
         }
-
-        return redirect()->route('vaults.index')
+      return redirect()->route('vaults.index')
             ->with('success','Site created successfully');
+
     }
 
     public function validatePassword(Request $request)
@@ -150,7 +146,8 @@ class VaultController extends Controller
     public function edit($id)
     {
         $vault = Vault::find($id);
-        return view('vaults.edit',compact('vault'));
+        $decryptPassword =Crypt::decryptString($vault->password);
+        return view('vaults.edit',compact('vault','decryptPassword'));
     }
 
 
@@ -182,8 +179,12 @@ class VaultController extends Controller
         $vault = Vault::find($id);
         $vault->delete();
 
-        return redirect()->route('vaults.index')
-            ->with('success','Site deleted successfully');
+//        return redirect()->route('vaults.index')
+//            ->with('success','Site deleted successfully');
+        return response()->json([
+            'status' => 'success',
+            'message' => 'success',
+        ],200);
     }
 
 }

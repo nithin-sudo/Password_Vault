@@ -24,22 +24,22 @@
                                 @csrf
                                 @method('POST')
                                 <div class="form-group">
-                                    <strong>Title:</strong>
+                                    <strong style="color: black;margin-right:30em">Title:</strong>
                                     <input type="text" name="title" value="{{ $vault->title}}"  class="form-control" placeholder="Enter Title">
                                 </div>
                                 <div class="form-group">
-                                    <strong>Url:</strong>
+                                    <strong style="color: black;margin-right:30em">Url:</strong>
                                     <input type="text" name="url" value="{{  $vault->url}}" class="form-control" placeholder="Enter url">
                                 </div>
                                 <div class="form-group">
-                                    <strong>User Name:</strong>
+                                    <strong style="color: black;margin-right:30em">UserName:</strong>
                                     <input type="text" name="username" value="{{ $vault->username}}" class="form-control" placeholder="Enter Name">
                                 </div>
                                 <div class="form-group">
-                                    <strong>Password:</strong>
-                                    <input type="password" name="password"  class="form-control" placeholder="Enter Password">
+                                    <strong style="color: black;margin-right:30em">Password:</strong>
+                                    <input id="myInput" type="password"  name="password"  value="{{$decryptPassword}}" class="form-control" placeholder="Enter Password">
+                                    <button id="myButton"onclick="myFunction()" type="button" toggle="#password-field" class="btn btn-default pull-right" data-toggle="tooltip" title="show password" style="margin-top: -40px; margin-right: 5px"><i id="eye"class="fa fa-eye"></i></button>
                                 </div>
-
                                 <div class="text-centre">
                                     <button style="background-color: #2d3748;margin-right:10px;" type="submit" class="btn btn-primary">Submit</button>
                                     <a class="btn btn-primary" style="background-color: cornflowerblue ;margin-right:10px;" href="{{ route('vaults.index') }}"> Go Back </a>
@@ -52,42 +52,22 @@
         </div>
     </section>
 
+    <script>
+        function myFunction(){
+            var x = document.getElementById("myInput");
+            console.log(x);
+            if(x.type == "password") {
+                x.type = "text";
+                document.getElementById("myButton").setAttribute('title','hide password');
+                document.getElementById("eye").setAttribute('class','fa fa-eye-slash')
+            }
+            else {
+                x.type = "password";
+                document.getElementById("myButton").setAttribute('title','show password');
+                document.getElementById("eye").setAttribute('class','fa fa-eye')
+            }
+        }
+    </script>
 
-
-
-
-
-{{--    <form style="border:1px solid black;  margin:20px; padding:20px;" action="{{ route('vaults.update',$vault->id) }}" method="POST">--}}
-{{--        @csrf--}}
-{{--        @method('PUT')--}}
-{{--        <fieldset>--}}
-{{--        <div class="col-md-4 col-md-offset-4" class="row">--}}
-{{--            <div class="col-xs-12 col-sm-12 col-md-12">--}}
-{{--                <div class="form-group">--}}
-{{--                    <strong>Title:</strong>--}}
-{{--                    <input type="text" name="title" value="{{ $vault->title}}"  class="form-control" placeholder="Enter Title">--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <strong>Url:</strong>--}}
-{{--                    <input type="text" name="url" value="{{  $vault->url}}" class="form-control" placeholder="Enter url">--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <strong>User Name:</strong>--}}
-{{--                    <input type="text" name="username" value="{{ $vault->username}}" class="form-control" placeholder="Enter Name">--}}
-{{--                </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <strong>Password:</strong>--}}
-{{--                    <input type="password" name="password"  class="form-control" placeholder="Enter Password">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="col-xs-12 col-sm-12 col-md-12 text-middle">--}}
-{{--                <button style="background-color: green; margin:3px;" type="submit" class="btn btn-primary">Submit</button>--}}
-{{--                <a class="btn btn-primary" style="background-color: cornflowerblue ;margin:3px;" href="{{ route('vaults.index') }}"> Go Back </a>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--        </fieldset>--}}
-{{--    </form>--}}
 @endsection
 

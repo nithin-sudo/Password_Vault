@@ -25,15 +25,19 @@
                                 @csrf
                                 @method('POST')
                               <div class="form-group">
+                                  <strong style="color: black;margin-right:30em">Title:</strong>
                                   <input type="text" name="title" class="form-control" style="margin-bottom:30px;" placeholder="Enter Title">
                               </div>
                               <div class="form-group">
+                                  <strong style="color: black;margin-right:30em">Url:</strong>
                                   <input type="text" name="url"  class="form-control" style="margin-bottom:30px;" placeholder="Enter url">
                               </div>
                               <div class="form-group">
+                                  <strong style="color: black;margin-right:30em">UserName:</strong>
                                   <input type="text" name="username"  class="form-control" style="margin-bottom:30px;" placeholder="Enter User Name">
                               </div>
                               <div class="form-group">
+                                  <strong style="color: black;margin-right:30em">Password:</strong>
                                   <input type="password" name="password" class="form-control" style="margin-bottom:30px;" placeholder="Enter Password">
                               </div>
 

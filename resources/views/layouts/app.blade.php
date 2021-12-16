@@ -11,6 +11,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        <!--eye icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -18,6 +21,10 @@
         @stack('page_styles')
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- SweetAlert2 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -37,7 +44,7 @@
                 {{ !empty($slot) ? $slot : null }}
             </main>
         </div>
-
+@include('sweetalert::alert')
     </body>
 @stack('page_scripts')
 
