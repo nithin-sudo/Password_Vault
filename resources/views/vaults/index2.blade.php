@@ -21,9 +21,9 @@
 @section('content')
     <div class="bs-example">
         <div class="bg-light clearfix">
-            <h1 style="color:chocolate; font-size:55px;" class="text-center"><b>OMNI-VAULT</b></h1>
-            <a class="btn btn-warning float-right ml-2" href="{{ route('vaults.create') }}"> Create New Site</a>
-            <a class="btn btn-primary float-right" href="{{ route('dashboard') }}"> Back to Dashboard</a>
+{{--            <h1 style="color:chocolate; font-size:55px;" class="text-center"><b>OMNI-VAULT</b></h1>--}}
+            <a class="btn btn-warning float-right ml-2" style="margin-right: 50px" href="{{ route('vaults.create') }}"> Create New Site</a>
+            <a class="btn btn-primary float-right" style="margin-left: 50px" href="{{ route('dashboard') }}"> Back to Dashboard</a>
         </div>
     </div>
 

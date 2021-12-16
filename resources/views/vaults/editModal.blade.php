@@ -65,7 +65,6 @@
                 } else {
                     // alert('Un authenticated');
                     swal(
-                        // icon:'error',
                         'Un Authenticated!',
                         'Wrong Password',
                         'warning'

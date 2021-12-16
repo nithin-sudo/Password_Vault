@@ -99,6 +99,8 @@ class VaultController extends Controller
 
     }
 
+
+    //for vaildating password edit modal
     public function validatePassword(Request $request)
     {
         $validator = Validator::make($request->all(),[
@@ -116,7 +118,7 @@ class VaultController extends Controller
         }
     }
 
-
+//for show password
     public function showPassword(Request $request, $id)
     {
         $validator = Validator::make($request->all(),[
@@ -170,8 +172,8 @@ class VaultController extends Controller
         $createdMessage ="Site has been Successfully Updated Site url:$request->url<a href=\"http://omnivault.test/vaults\">See My Sites</a>";
         event(new SiteCreatedEvent($currentUser->email,$createdMessage));
 
-        return redirect()->route('vaults.index')
-            ->with('success','site updated successfully');
+        return redirect()->route('vaults.index');
+//            ->with('success','site updated successfully');
     }
 
     public function destroy($id)

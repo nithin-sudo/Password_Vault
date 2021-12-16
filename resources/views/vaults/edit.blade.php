@@ -41,7 +41,7 @@
                                     <button id="myButton"onclick="myFunction()" type="button" toggle="#password-field" class="btn btn-default pull-right" data-toggle="tooltip" title="show password" style="margin-top: -40px; margin-right: 5px"><i id="eye"class="fa fa-eye"></i></button>
                                 </div>
                                 <div class="text-centre">
-                                    <button style="background-color: #2d3748;margin-right:10px;" type="submit" class="btn btn-primary">Submit</button>
+                                    <button style="background-color: #2d3748;margin-right:10px;" type="submit" class="btn btn-primary editSave">Save Changes</button>
                                     <a class="btn btn-primary" style="background-color: cornflowerblue ;margin-right:10px;" href="{{ route('vaults.index') }}"> Go Back </a>
                                 </div>
                             </form>
@@ -67,6 +67,13 @@
                 document.getElementById("eye").setAttribute('class','fa fa-eye')
             }
         }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script type="text/javascript">
+
+
     </script>
 
 @endsection
