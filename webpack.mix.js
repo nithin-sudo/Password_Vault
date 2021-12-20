@@ -16,3 +16,7 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+
+mix.js('resources/css/dataTables.bootstrap4.css','public/css');
+mix.js('resources/js/dataTables.bootstrap4.js','public/js');
+

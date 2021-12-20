@@ -48,20 +48,21 @@
             </thead>
             <tbody>
 
-                @foreach($vault as $vaults)
+                @foreach($vaults as $vault)
                 <tr>
-                    <td>{{$vault->id}}</td>
+                    <td>{{$loop->iteration}}</td>
                     <td>{{$vault->title}}</td>
                     <td>{{$vault->url}}</td>
                     <td>{{$vault->username}}</td>
-                    <td>**************</td>
+                    <td>*************</td>
                     <td>
-                        <a class="edit btn btn-warning btn-sm showPassword" href="{{route("vaults.showpassword", $vaults->id)}}"> Show Password</a>
-                        <a class="edit btn btn-success btn-sm editVault" href="{{route("vaults.edit", $vaults->id)}}"> Edit</a>
-                        <a class="delete btn btn-danger btn-sm removeVault" href="{{route("vaults.destroy", $vaults->id)}}"> Remove</a>
+                        <a class="edit btn btn-warning btn-sm showPassword" href="{{route("vaults.showpassword", $vault->id)}}"> Show Password</a>
+                        <a class="edit btn btn-success btn-sm editVault" href="{{route("vaults.edit", $vault->id)}}"> Edit</a>
+                        <a class="delete btn btn-danger btn-sm removeVault" href="{{route("vaults.destroy", $vault->id)}}"> Remove</a>
 
                     </td>
                 </tr>
+                    @endforeach
             </tbody>
         </table>
 
@@ -76,6 +77,11 @@
 {{--    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>--}}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 {{--    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>--}}
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script type="text/javascript">
 
         //datatable
@@ -101,11 +107,13 @@
 
         {{--});--}}
 
+
+
+            // datatables
+
         $(document).ready( function () {
             $('#myDataTable').DataTable();
         } );
-
-
 
 
 
@@ -147,6 +155,7 @@
                     })
                 }
             })
+
         });
     </script>
 

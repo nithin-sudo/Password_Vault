@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 
 
 Route::get('vaults', [VaultController::class,'index'])->name('vaults.index');
-Route::get('vaults/sites', [VaultController::class, 'showSites'])->name('vaults.sites');
+//Route::get('vaults/sites', [VaultController::class, 'showSites'])->name('vaults.sites');
 
 Route::get('vaults/create', [VaultController::class,'create'])->name('vaults.create');
 Route::post('vaults/store', [VaultController::class,'store'])->name('vaults.store');

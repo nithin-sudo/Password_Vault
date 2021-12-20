@@ -13,20 +13,23 @@ class CreateVaultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vaults', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('user_id');
-            $table->string('title');
-            $table->string('url');
-            $table->string('username');
-            $table->string('password');
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('vaults')){
+            Schema::create('vaults', function (Blueprint $table) {
+                $table->id();
+                $table->unsignedInteger('user_id');
+                $table->string('title');
+                $table->string('url');
+                $table->string('username');
+                $table->string('password');
+                $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+                $table->timestamps();
+            });
+        }
+
     }
 
     /**

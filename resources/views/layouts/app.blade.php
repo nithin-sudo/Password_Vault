@@ -16,8 +16,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-        <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
         @stack('page_styles')
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,6 +24,7 @@
         <!-- SweetAlert2 -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -34,7 +34,6 @@
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ !empty($header) ? $header : null }}
-
                 </div>
             </header>
 
@@ -44,7 +43,6 @@
                 {{ !empty($slot) ? $slot : null }}
             </main>
         </div>
-@include('sweetalert::alert')
     </body>
 @stack('page_scripts')
 

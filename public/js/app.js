@@ -441,7 +441,7 @@ var require_shared_cjs = __commonJS((exports) => {
   exports.toTypeString = toTypeString;
 });
 
-// node_modules/@vue/shared/users.js
+// node_modules/@vue/shared/index.js
 var require_shared = __commonJS((exports, module) => {
   "use strict";
   if (false) {} else {
@@ -1256,7 +1256,7 @@ var require_reactivity_cjs = __commonJS((exports) => {
   exports.unref = unref;
 });
 
-// node_modules/@vue/reactivity/users.js
+// node_modules/@vue/reactivity/index.js
 var require_reactivity = __commonJS((exports, module) => {
   "use strict";
   if (false) {} else {
@@ -2497,7 +2497,7 @@ var Alpine = {
 };
 var alpine_default = Alpine;
 
-// packages/alpinejs/src/users.js
+// packages/alpinejs/src/index.js
 var import_reactivity9 = __toModule(require_reactivity());
 
 // packages/alpinejs/src/magics/$nextTick.js
@@ -3268,7 +3268,7 @@ directive("on", skipDuringClone((el, {value, modifiers, expression}, {cleanup}) 
   cleanup(() => removeListener());
 }));
 
-// packages/alpinejs/src/users.js
+// packages/alpinejs/src/index.js
 alpine_default.setEvaluator(normalEvaluator);
 alpine_default.setReactivityEngine({reactive: import_reactivity9.reactive, effect: import_reactivity9.effect, release: import_reactivity9.stop, raw: import_reactivity9.toRaw});
 var src_default = alpine_default;
@@ -3282,7 +3282,7 @@ var module_default = src_default;
 
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
-  !*** ./node_modules/axios/users.js ***!
+  !*** ./node_modules/axios/index.js ***!
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -5201,7 +5201,7 @@ function isStandardBrowserEnv() {
  * Iterate over an Array or an Object invoking a function for each item.
  *
  * If `obj` is an Array callback will be called passing
- * the value, users, and complete array for each item.
+ * the value, index, and complete array for each item.
  *
  * If 'obj' is an Object callback will be called passing
  * the value, key, and complete object for each property.
@@ -5461,7 +5461,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
       MAX_INTEGER = 1.7976931348623157e+308,
       NAN = 0 / 0;
 
-  /** Used as references for the maximum length and users of an array. */
+  /** Used as references for the maximum length and index of an array. */
   var MAX_ARRAY_LENGTH = 4294967295,
       MAX_ARRAY_INDEX = MAX_ARRAY_LENGTH - 1,
       HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
@@ -5992,7 +5992,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
   /**
    * A specialized version of `_.includes` for arrays without support for
-   * specifying an users to search from.
+   * specifying an index to search from.
    *
    * @private
    * @param {Array} [array] The array to inspect.
@@ -6194,9 +6194,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
    * @private
    * @param {Array} array The array to inspect.
    * @param {Function} predicate The function invoked per iteration.
-   * @param {number} fromIndex The users to search from.
+   * @param {number} fromIndex The index to search from.
    * @param {boolean} [fromRight] Specify iterating from right to left.
-   * @returns {number} Returns the users of the matched value, else `-1`.
+   * @returns {number} Returns the index of the matched value, else `-1`.
    */
   function baseFindIndex(array, predicate, fromIndex, fromRight) {
     var length = array.length,
@@ -6216,8 +6216,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
    * @private
    * @param {Array} array The array to inspect.
    * @param {*} value The value to search for.
-   * @param {number} fromIndex The users to search from.
-   * @returns {number} Returns the users of the matched value, else `-1`.
+   * @param {number} fromIndex The index to search from.
+   * @returns {number} Returns the index of the matched value, else `-1`.
    */
   function baseIndexOf(array, value, fromIndex) {
     return value === value
@@ -6231,9 +6231,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
    * @private
    * @param {Array} array The array to inspect.
    * @param {*} value The value to search for.
-   * @param {number} fromIndex The users to search from.
+   * @param {number} fromIndex The index to search from.
    * @param {Function} comparator The comparator invoked per element.
-   * @returns {number} Returns the users of the matched value, else `-1`.
+   * @returns {number} Returns the index of the matched value, else `-1`.
    */
   function baseIndexOfWith(array, value, fromIndex, comparator) {
     var index = fromIndex - 1,
@@ -6452,13 +6452,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
   }
 
   /**
-   * Used by `_.trim` and `_.trimStart` to get the users of the first string symbol
+   * Used by `_.trim` and `_.trimStart` to get the index of the first string symbol
    * that is not found in the character symbols.
    *
    * @private
    * @param {Array} strSymbols The string symbols to inspect.
    * @param {Array} chrSymbols The character symbols to find.
-   * @returns {number} Returns the users of the first unmatched string symbol.
+   * @returns {number} Returns the index of the first unmatched string symbol.
    */
   function charsStartIndex(strSymbols, chrSymbols) {
     var index = -1,
@@ -6469,13 +6469,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
   }
 
   /**
-   * Used by `_.trim` and `_.trimEnd` to get the users of the last string symbol
+   * Used by `_.trim` and `_.trimEnd` to get the index of the last string symbol
    * that is not found in the character symbols.
    *
    * @private
    * @param {Array} strSymbols The string symbols to inspect.
    * @param {Array} chrSymbols The character symbols to find.
-   * @returns {number} Returns the users of the last unmatched string symbol.
+   * @returns {number} Returns the index of the last unmatched string symbol.
    */
   function charsEndIndex(strSymbols, chrSymbols) {
     var index = strSymbols.length;
@@ -6682,8 +6682,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
    * @private
    * @param {Array} array The array to inspect.
    * @param {*} value The value to search for.
-   * @param {number} fromIndex The users to search from.
-   * @returns {number} Returns the users of the matched value, else `-1`.
+   * @param {number} fromIndex The index to search from.
+   * @returns {number} Returns the index of the matched value, else `-1`.
    */
   function strictIndexOf(array, value, fromIndex) {
     var index = fromIndex - 1,
@@ -6704,8 +6704,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
    * @private
    * @param {Array} array The array to inspect.
    * @param {*} value The value to search for.
-   * @param {number} fromIndex The users to search from.
-   * @returns {number} Returns the users of the matched value, else `-1`.
+   * @param {number} fromIndex The index to search from.
+   * @returns {number} Returns the index of the matched value, else `-1`.
    */
   function strictLastIndexOf(array, value, fromIndex) {
     var index = fromIndex + 1;
@@ -6744,12 +6744,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
   }
 
   /**
-   * Used by `_.trim` and `_.trimEnd` to get the users of the last non-whitespace
+   * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
    * character of `string`.
    *
    * @private
    * @param {string} string The string to inspect.
-   * @returns {number} Returns the users of the last non-whitespace character.
+   * @returns {number} Returns the index of the last non-whitespace character.
    */
   function trimmedEndIndex(string) {
     var index = string.length;
@@ -7826,11 +7826,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             !(skipIndexes && (
                // Safari 9 has enumerable `arguments.length` in strict mode.
                key == 'length' ||
-               // Node.js 0.10 has enumerable non-users properties on buffers.
+               // Node.js 0.10 has enumerable non-index properties on buffers.
                (isBuff && (key == 'offset' || key == 'parent')) ||
-               // PhantomJS 2 has enumerable non-users properties on typed arrays.
+               // PhantomJS 2 has enumerable non-index properties on typed arrays.
                (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
-               // Skip users properties.
+               // Skip index properties.
                isIndex(key, length)
             ))) {
           result.push(key);
@@ -7909,12 +7909,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * Gets the users at which the `key` is found in `array` of key-value pairs.
+     * Gets the index at which the `key` is found in `array` of key-value pairs.
      *
      * @private
      * @param {Array} array The array to inspect.
      * @param {*} key The key to search for.
-     * @returns {number} Returns the users of the matched value, else `-1`.
+     * @returns {number} Returns the index of the matched value, else `-1`.
      */
     function assocIndexOf(array, key) {
       var length = array.length;
@@ -9020,7 +9020,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @private
      * @param {Object} object The destination object.
      * @param {Object} source The source object.
-     * @param {number} srcIndex The users of `source`.
+     * @param {number} srcIndex The index of `source`.
      * @param {Function} [customizer] The function to customize merged values.
      * @param {Object} [stack] Tracks traversed source values and their merged
      *  counterparts.
@@ -9056,7 +9056,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @param {Object} object The destination object.
      * @param {Object} source The source object.
      * @param {string} key The key of the value to merge.
-     * @param {number} srcIndex The users of `source`.
+     * @param {number} srcIndex The index of `source`.
      * @param {Function} mergeFunc The function to merge values.
      * @param {Function} [customizer] The function to customize assigned values.
      * @param {Object} [stack] Tracks traversed source values and their merged
@@ -9129,7 +9129,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      *
      * @private
      * @param {Array} array The array to query.
-     * @param {number} n The users of the element to return.
+     * @param {number} n The index of the element to return.
      * @returns {*} Returns the nth element of `array`.
      */
     function baseNth(array, n) {
@@ -9533,14 +9533,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * The base implementation of `_.sortedIndex` and `_.sortedLastIndex` which
-     * performs a binary search of `array` to determine the users at which `value`
+     * performs a binary search of `array` to determine the index at which `value`
      * should be inserted into `array` in order to maintain its sort order.
      *
      * @private
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
-     * @param {boolean} [retHighest] Specify returning the highest qualified users.
-     * @returns {number} Returns the users at which `value` should be inserted
+     * @param {boolean} [retHighest] Specify returning the highest qualified index.
+     * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      */
     function baseSortedIndex(array, value, retHighest) {
@@ -9573,8 +9573,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function} iteratee The iteratee invoked per element.
-     * @param {boolean} [retHighest] Specify returning the highest qualified users.
-     * @returns {number} Returns the users at which `value` should be inserted
+     * @param {boolean} [retHighest] Specify returning the highest qualified index.
+     * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      */
     function baseSortedIndexBy(array, value, iteratee, retHighest) {
@@ -10497,7 +10497,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * Creates a `_.find` or `_.findLast` function.
      *
      * @private
-     * @param {Function} findIndexFunc The function to find the collection users.
+     * @param {Function} findIndexFunc The function to find the collection index.
      * @returns {Function} Returns the new find function.
      */
     function createFind(findIndexFunc) {
@@ -11083,7 +11083,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
       stack.set(array, other);
       stack.set(other, array);
 
-      // Ignore non-users properties.
+      // Ignore non-index properties.
       while (++index < arrLength) {
         var arrValue = array[index],
             othValue = other[index];
@@ -11704,12 +11704,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * Checks if `value` is a valid array-like users.
+     * Checks if `value` is a valid array-like index.
      *
      * @private
      * @param {*} value The value to check.
-     * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid users.
-     * @returns {boolean} Returns `true` if `value` is a valid users, else `false`.
+     * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+     * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
      */
     function isIndex(value, length) {
       var type = typeof value;
@@ -11726,7 +11726,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      *
      * @private
      * @param {*} value The potential iteratee value argument.
-     * @param {*} index The potential iteratee users or key argument.
+     * @param {*} index The potential iteratee index or key argument.
      * @param {*} object The potential iteratee object argument.
      * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
      *  else `false`.
@@ -12032,8 +12032,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * Reorder `array` according to the specified indexes where the element at
-     * the first users is assigned as the first element, the element at
-     * the second users is assigned as the second element, and so on.
+     * the first index is assigned as the first element, the element at
+     * the second index is assigned as the second element, and so on.
      *
      * @private
      * @param {Array} array The array to reorder.
@@ -12545,7 +12545,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Creates a slice of `array` excluding elements dropped from the end.
      * Elements are dropped until `predicate` returns falsey. The predicate is
-     * invoked with three arguments: (value, users, array).
+     * invoked with three arguments: (value, index, array).
      *
      * @static
      * @memberOf _
@@ -12586,7 +12586,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Creates a slice of `array` excluding elements dropped from the beginning.
      * Elements are dropped until `predicate` returns falsey. The predicate is
-     * invoked with three arguments: (value, users, array).
+     * invoked with three arguments: (value, index, array).
      *
      * @static
      * @memberOf _
@@ -12666,7 +12666,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * This method is like `_.find` except that it returns the users of the first
+     * This method is like `_.find` except that it returns the index of the first
      * element `predicate` returns truthy for instead of the element itself.
      *
      * @static
@@ -12675,8 +12675,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The array to inspect.
      * @param {Function} [predicate=_.identity] The function invoked per iteration.
-     * @param {number} [fromIndex=0] The users to search from.
-     * @returns {number} Returns the users of the found element, else `-1`.
+     * @param {number} [fromIndex=0] The index to search from.
+     * @returns {number} Returns the index of the found element, else `-1`.
      * @example
      *
      * var users = [
@@ -12722,8 +12722,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The array to inspect.
      * @param {Function} [predicate=_.identity] The function invoked per iteration.
-     * @param {number} [fromIndex=array.length-1] The users to search from.
-     * @returns {number} Returns the users of the found element, else `-1`.
+     * @param {number} [fromIndex=array.length-1] The index to search from.
+     * @returns {number} Returns the index of the found element, else `-1`.
      * @example
      *
      * var users = [
@@ -12879,7 +12879,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * Gets the users at which the first occurrence of `value` is found in `array`
+     * Gets the index at which the first occurrence of `value` is found in `array`
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * for equality comparisons. If `fromIndex` is negative, it's used as the
      * offset from the end of `array`.
@@ -12890,8 +12890,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The array to inspect.
      * @param {*} value The value to search for.
-     * @param {number} [fromIndex=0] The users to search from.
-     * @returns {number} Returns the users of the matched value, else `-1`.
+     * @param {number} [fromIndex=0] The index to search from.
+     * @returns {number} Returns the index of the matched value, else `-1`.
      * @example
      *
      * _.indexOf([1, 2, 1, 2], 2);
@@ -13075,8 +13075,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The array to inspect.
      * @param {*} value The value to search for.
-     * @param {number} [fromIndex=array.length-1] The users to search from.
-     * @returns {number} Returns the users of the matched value, else `-1`.
+     * @param {number} [fromIndex=array.length-1] The index to search from.
+     * @returns {number} Returns the index of the matched value, else `-1`.
      * @example
      *
      * _.lastIndexOf([1, 2, 1, 2], 2);
@@ -13102,7 +13102,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * Gets the element at users `n` of `array`. If `n` is negative, the nth
+     * Gets the element at index `n` of `array`. If `n` is negative, the nth
      * element from the end is returned.
      *
      * @static
@@ -13110,7 +13110,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @since 4.11.0
      * @category Array
      * @param {Array} array The array to query.
-     * @param {number} [n=0] The users of the element to return.
+     * @param {number} [n=0] The index of the element to return.
      * @returns {*} Returns the nth element of `array`.
      * @example
      *
@@ -13273,7 +13273,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Removes all elements from `array` that `predicate` returns truthy for
      * and returns an array of the removed elements. The predicate is invoked
-     * with three arguments: (value, users, array).
+     * with three arguments: (value, index, array).
      *
      * **Note:** Unlike `_.filter`, this method mutates `array`. Use `_.pull`
      * to pull elements from an array by value.
@@ -13379,7 +13379,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * Uses a binary search to determine the lowest users at which `value`
+     * Uses a binary search to determine the lowest index at which `value`
      * should be inserted into `array` in order to maintain its sort order.
      *
      * @static
@@ -13388,7 +13388,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
-     * @returns {number} Returns the users at which `value` should be inserted
+     * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      * @example
      *
@@ -13411,7 +13411,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {number} Returns the users at which `value` should be inserted
+     * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      * @example
      *
@@ -13438,7 +13438,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The array to inspect.
      * @param {*} value The value to search for.
-     * @returns {number} Returns the users of the matched value, else `-1`.
+     * @returns {number} Returns the index of the matched value, else `-1`.
      * @example
      *
      * _.sortedIndexOf([4, 5, 5, 5, 6], 5);
@@ -13457,7 +13457,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * This method is like `_.sortedIndex` except that it returns the highest
-     * users at which `value` should be inserted into `array` in order to
+     * index at which `value` should be inserted into `array` in order to
      * maintain its sort order.
      *
      * @static
@@ -13466,7 +13466,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
-     * @returns {number} Returns the users at which `value` should be inserted
+     * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      * @example
      *
@@ -13489,7 +13489,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
-     * @returns {number} Returns the users at which `value` should be inserted
+     * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      * @example
      *
@@ -13516,7 +13516,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Array
      * @param {Array} array The array to inspect.
      * @param {*} value The value to search for.
-     * @returns {number} Returns the users of the matched value, else `-1`.
+     * @returns {number} Returns the index of the matched value, else `-1`.
      * @example
      *
      * _.sortedLastIndexOf([4, 5, 5, 5, 6], 5);
@@ -13666,7 +13666,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Creates a slice of `array` with elements taken from the end. Elements are
      * taken until `predicate` returns falsey. The predicate is invoked with
-     * three arguments: (value, users, array).
+     * three arguments: (value, index, array).
      *
      * @static
      * @memberOf _
@@ -13707,7 +13707,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Creates a slice of `array` with elements taken from the beginning. Elements
      * are taken until `predicate` returns falsey. The predicate is invoked with
-     * three arguments: (value, users, array).
+     * three arguments: (value, index, array).
      *
      * @static
      * @memberOf _
@@ -14539,7 +14539,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Checks if `predicate` returns truthy for **all** elements of `collection`.
      * Iteration is stopped once `predicate` returns falsey. The predicate is
-     * invoked with three arguments: (value, users|key, collection).
+     * invoked with three arguments: (value, index|key, collection).
      *
      * **Note:** This method returns `true` for
      * [empty collections](https://en.wikipedia.org/wiki/Empty_set) because
@@ -14588,7 +14588,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Iterates over elements of `collection`, returning an array of all elements
      * `predicate` returns truthy for. The predicate is invoked with three
-     * arguments: (value, users|key, collection).
+     * arguments: (value, index|key, collection).
      *
      * **Note:** Unlike `_.remove`, this method returns a new array.
      *
@@ -14634,7 +14634,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Iterates over elements of `collection`, returning the first element
      * `predicate` returns truthy for. The predicate is invoked with three
-     * arguments: (value, users|key, collection).
+     * arguments: (value, index|key, collection).
      *
      * @static
      * @memberOf _
@@ -14642,7 +14642,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Collection
      * @param {Array|Object} collection The collection to inspect.
      * @param {Function} [predicate=_.identity] The function invoked per iteration.
-     * @param {number} [fromIndex=0] The users to search from.
+     * @param {number} [fromIndex=0] The index to search from.
      * @returns {*} Returns the matched element, else `undefined`.
      * @example
      *
@@ -14679,7 +14679,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Collection
      * @param {Array|Object} collection The collection to inspect.
      * @param {Function} [predicate=_.identity] The function invoked per iteration.
-     * @param {number} [fromIndex=collection.length-1] The users to search from.
+     * @param {number} [fromIndex=collection.length-1] The index to search from.
      * @returns {*} Returns the matched element, else `undefined`.
      * @example
      *
@@ -14693,7 +14693,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Creates a flattened array of values by running each element in `collection`
      * thru `iteratee` and flattening the mapped results. The iteratee is invoked
-     * with three arguments: (value, users|key, collection).
+     * with three arguments: (value, index|key, collection).
      *
      * @static
      * @memberOf _
@@ -14767,7 +14767,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * Iterates over elements of `collection` and invokes `iteratee` for each element.
-     * The iteratee is invoked with three arguments: (value, users|key, collection).
+     * The iteratee is invoked with three arguments: (value, index|key, collection).
      * Iteratee functions may exit iteration early by explicitly returning `false`.
      *
      * **Note:** As with other "Collections" methods, objects with a "length"
@@ -14869,7 +14869,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @category Collection
      * @param {Array|Object|string} collection The collection to inspect.
      * @param {*} value The value to search for.
-     * @param {number} [fromIndex=0] The users to search from.
+     * @param {number} [fromIndex=0] The index to search from.
      * @param- {Object} [guard] Enables use as an iteratee for methods like `_.reduce`.
      * @returns {boolean} Returns `true` if `value` is found, else `false`.
      * @example
@@ -14968,7 +14968,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Creates an array of values by running each element in `collection` thru
      * `iteratee`. The iteratee is invoked with three arguments:
-     * (value, users|key, collection).
+     * (value, index|key, collection).
      *
      * Many lodash methods are guarded to work as iteratees for methods like
      * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
@@ -15101,7 +15101,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * invocation is supplied the return value of the previous. If `accumulator`
      * is not given, the first element of `collection` is used as the initial
      * value. The iteratee is invoked with four arguments:
-     * (accumulator, value, users|key, collection).
+     * (accumulator, value, index|key, collection).
      *
      * Many lodash methods are guarded to work as iteratees for methods like
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
@@ -15314,7 +15314,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     /**
      * Checks if `predicate` returns truthy for **any** element of `collection`.
      * Iteration is stopped once `predicate` returns truthy. The predicate is
-     * invoked with three arguments: (value, users|key, collection).
+     * invoked with three arguments: (value, index|key, collection).
      *
      * @static
      * @memberOf _
@@ -16201,8 +16201,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * Creates a function that invokes `func` with arguments arranged according
-     * to the specified `indexes` where the argument value at the first users is
-     * provided as the first argument, the argument value at the second users is
+     * to the specified `indexes` where the argument value at the first index is
+     * provided as the first argument, the argument value at the second index is
      * provided as the second argument, and so on.
      *
      * @static
@@ -16492,7 +16492,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * This method is like `_.clone` except that it accepts `customizer` which
      * is invoked to produce the cloned value. If `customizer` returns `undefined`,
      * cloning is handled by the method instead. The `customizer` is invoked with
-     * up to four arguments; (value [, users|key, object, stack]).
+     * up to four arguments; (value [, index|key, object, stack]).
      *
      * @static
      * @memberOf _
@@ -16994,7 +16994,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * This method is like `_.isEqual` except that it accepts `customizer` which
      * is invoked to compare values. If `customizer` returns `undefined`, comparisons
      * are handled by the method instead. The `customizer` is invoked with up to
-     * six arguments: (objValue, othValue [, users|key, object, other, stack]).
+     * six arguments: (objValue, othValue [, index|key, object, other, stack]).
      *
      * @static
      * @memberOf _
@@ -17286,7 +17286,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * This method is like `_.isMatch` except that it accepts `customizer` which
      * is invoked to compare values. If `customizer` returns `undefined`, comparisons
      * are handled by the method instead. The `customizer` is invoked with five
-     * arguments: (objValue, srcValue, users|key, object, source).
+     * arguments: (objValue, srcValue, index|key, object, source).
      *
      * @static
      * @memberOf _
@@ -19102,7 +19102,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * Sets the value at `path` of `object`. If a portion of `path` doesn't exist,
-     * it's created. Arrays are created for missing users properties while objects
+     * it's created. Arrays are created for missing index properties while objects
      * are created for all other missing properties. Use `_.setWith` to customize
      * `path` creation.
      *
@@ -21238,14 +21238,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
 
     /**
-     * Creates a function that gets the argument at users `n`. If `n` is negative,
+     * Creates a function that gets the argument at index `n`. If `n` is negative,
      * the nth argument from the end is returned.
      *
      * @static
      * @memberOf _
      * @since 4.0.0
      * @category Util
-     * @param {number} [n=0] The users of the argument to return.
+     * @param {number} [n=0] The index of the argument to return.
      * @returns {Function} Returns the new pass-thru function.
      * @example
      *
@@ -21578,7 +21578,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
     /**
      * Invokes the iteratee `n` times, returning an array of the results of
-     * each invocation. The iteratee is invoked with one argument; (users).
+     * each invocation. The iteratee is invoked with one argument; (index).
      *
      * @static
      * @since 0.1.0
@@ -22807,7 +22807,7 @@ process.umask = function() { return 0; };
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"users.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./users.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 
@@ -22815,7 +22815,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/
+/******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -22829,20 +22829,20 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/
+/******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+/******/ 	
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+/******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
+/******/ 	
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
@@ -22875,7 +22875,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			return result;
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -22887,7 +22887,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -22899,12 +22899,12 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -22915,7 +22915,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -22924,11 +22924,11 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
-/******/
+/******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
@@ -22936,19 +22936,19 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0
 /******/ 		};
-/******/
+/******/ 		
 /******/ 		// no chunk on demand loading
-/******/
+/******/ 		
 /******/ 		// no prefetching
-/******/
+/******/ 		
 /******/ 		// no preloaded
-/******/
+/******/ 		
 /******/ 		// no HMR
-/******/
+/******/ 		
 /******/ 		// no HMR manifest
-/******/
+/******/ 		
 /******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/
+/******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
@@ -22973,20 +22973,20 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			}
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
-/******/
+/******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
-/******/
+/******/ 	
 /************************************************************************/
-/******/
+/******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/
+/******/ 	
 /******/ })()
 ;

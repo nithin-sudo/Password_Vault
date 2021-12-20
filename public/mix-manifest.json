@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/dataTables.bootstrap4.js": "/css/dataTables.bootstrap4.js",
+    "/js/dataTables.bootstrap4.js": "/js/dataTables.bootstrap4.js",
     "/css/app.css": "/css/app.css"
 }
