@@ -2,6 +2,8 @@
 @include('vaults.editModal')
 @include('vaults.showPasswordModal')
 @push('page_styles')
+{{--    <link href="{{mix('/css/dataTables.bootstrap4.css')}}" rel="stylesheet" type="text/css">--}}
+
     <style>
         .modal {
             overflow-y: auto;
@@ -48,21 +50,21 @@
             </thead>
             <tbody>
 
-                @foreach($vaults as $vault)
-                <tr>
-                    <td>{{$loop->iteration}}</td>
-                    <td>{{$vault->title}}</td>
-                    <td>{{$vault->url}}</td>
-                    <td>{{$vault->username}}</td>
-                    <td>*************</td>
-                    <td>
-                        <a class="edit btn btn-warning btn-sm showPassword" href="{{route("vaults.showpassword", $vault->id)}}"> Show Password</a>
-                        <a class="edit btn btn-success btn-sm editVault" href="{{route("vaults.edit", $vault->id)}}"> Edit</a>
-                        <a class="delete btn btn-danger btn-sm removeVault" href="{{route("vaults.destroy", $vault->id)}}"> Remove</a>
+{{--                @foreach($vaults as $vault)--}}
+{{--                <tr>--}}
+{{--                    <td>{{$loop->iteration}}</td>--}}
+{{--                    <td>{{$vault->title}}</td>--}}
+{{--                    <td>{{$vault->url}}</td>--}}
+{{--                    <td>{{$vault->username}}</td>--}}
+{{--                    <td>*************</td>--}}
+{{--                    <td>--}}
+{{--                        <a class="edit btn btn-warning btn-sm showPassword" href="{{route("vaults.showpassword", $vault->id)}}"> Show Password</a>--}}
+{{--                        <a class="edit btn btn-success btn-sm editVault" href="{{route("vaults.edit", $vault->id)}}"> Edit</a>--}}
+{{--                        <a class="delete btn btn-danger btn-sm removeVault" href="{{route("vaults.destroy", $vault->id)}}"> Remove</a>--}}
 
-                    </td>
-                </tr>
-                    @endforeach
+{{--                    </td>--}}
+{{--                </tr>--}}
+{{--                @endforeach--}}
             </tbody>
         </table>
 
@@ -78,42 +80,48 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 {{--    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>--}}
 
-
+    <script src=""></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+{{--    <script src="{{mix('/js/dataTables.bootstrap4.js')}}" type="text/javascript"></script>--}}
+{{--    <link href="{{mix('/css/dataTables.bootstrap4.css')}}" rel="stylesheet" type="text/css">--}}
+
     <script type="text/javascript">
 
         //datatable
-        {{--$(function () {--}}
-        {{--    var table = $('.yajra-datatable').DataTable({--}}
-        {{--        processing: true,--}}
-        {{--        serverSide: true,--}}
-        {{--        ajax: "{{ route('vaults.sites') }}",--}}
-        {{--        columns: [--}}
-        {{--            {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},--}}
-        {{--            {data: 'title', name: 'title'},--}}
-        {{--            {data: 'url', name: 'url'},--}}
-        {{--            {data: 'username', name: 'username'},--}}
-        {{--            {data: 'password', name: 'password'},--}}
-        {{--            {--}}
-        {{--                data: 'action',--}}
-        {{--                name: 'action',--}}
-        {{--                orderable: true,--}}
-        {{--                searchable: true--}}
-        {{--            },--}}
-        {{--        ]--}}
-        {{--    });--}}
+        $(function () {
+            var table = $('.yajra-datatable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('vaults.sites') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
+                    {data: 'title', name: 'title'},
+                    {data: 'url', name: 'url'},
+                    {data: 'username', name: 'username'},
+                    {data: 'password', name: 'password'},
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true
+                    },
+                ]
+            });
 
-        {{--});--}}
+        });
 
 
 
-            // datatables
+        // datatables
 
-        $(document).ready( function () {
-            $('#myDataTable').DataTable();
-        } );
+        // $(document).ready( function () {
+        //     $('#myDataTable').DataTable({
+        //         "pagingType": "full_numbers"
+        //     });
+        // } );
 
 
 

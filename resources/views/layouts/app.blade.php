@@ -17,6 +17,9 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+{{--        <script src="js/dataTables.bootstrap4.js"></script>--}}
+{{--        <link href="css/dataTables.bootstrap4.css" rel="stylesheet">--}}
+
         @stack('page_styles')
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
