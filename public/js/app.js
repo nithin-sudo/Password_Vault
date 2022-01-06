@@ -22606,6 +22606,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/dataTables.bootstrap4.css":
+/*!*************************************************!*\
+  !*** ./resources/css/dataTables.bootstrap4.css ***!
+  \*************************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nTypeError: Cannot read properties of undefined (reading 'dataTable')\n    at module.exports (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\datatables.net-bs4\\js\\dataTables.bootstrap4.js:27:23)\n    at LazyResult.runOnRoot (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\postcss\\lib\\lazy-result.js:339:16)\n    at LazyResult.runAsync (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\postcss\\lib\\lazy-result.js:391:26)\n    at LazyResult.async (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\postcss\\lib\\lazy-result.js:221:30)\n    at LazyResult.then (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\postcss\\lib\\lazy-result.js:206:17)\n    at processResult (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\webpack\\lib\\NormalModule.js:751:19)\n    at C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\webpack\\lib\\NormalModule.js:853:5\n    at C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\Users\\NithinKrishna\\development\\code\\omniVault\\node_modules\\postcss-loader\\dist\\index.js:142:7)");
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -22985,7 +22995,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/dataTables.bootstrap4.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
