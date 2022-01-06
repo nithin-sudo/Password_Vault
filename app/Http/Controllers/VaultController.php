@@ -20,10 +20,11 @@ class VaultController extends Controller
 
     public function index()
     {
-        $vaults = Vault::latest()->where('user_id',Auth::user()->id)->get();
-        return view('vaults.index3',compact('vaults'));
+//        $vaults = Vault::latest()->where('user_id',Auth::user()->id)->get();
+        return view('vaults.index3');
+//        ,compact('vaults'));
     }
-/*
+
     public function showSites(Request $request)
     {
         if ($request->ajax())
@@ -47,7 +48,7 @@ class VaultController extends Controller
                 ->make(true);
         }
     }
-*/
+
 
     public function userIndex()
     {
